@@ -1,0 +1,197 @@
+@import "breakpoint";
+
+$primary: #A1D4C7;
+$secondary: #D9796F;
+$secondary-dark: #A16A73;
+$accent: #CBE8F5;
+$accent2: #27596E;
+
+body {
+	background-color: $accent;
+	background-image: url('../img/squiggles.png');
+	background-repeat: repeat;
+	padding: {
+		top: 25px;
+		bottom: 25px;
+	}
+}
+
+
+.sitename {
+	font-family: 'Delius Unicase', sans-serif;
+	color: $secondary !important;
+
+	b {
+		font-weight: bold !important;
+		color: $primary !important;
+	}
+}
+
+h1, h2 {
+	font-family: 'Delius Unicase', sans-serif;
+}
+
+#page-header {
+	background: white;
+
+	> *, h1, h2 {
+		font-family: 'Delius Unicase', sans-serif;
+	}
+
+	#site-title {
+		text-align: center;
+	}
+
+	h1 {
+		font-weight: normal;
+		margin-bottom: 0;
+	}
+
+	h2 {
+		margin-top: 0;
+		color: $accent2;
+	}
+
+	@include breakpoint(max-width 767px) {
+		h1 { font-size: 2.5em; }
+		h2 { font-size: 1em; }
+	}
+	@include breakpoint(min-width 768px, max-width 991px) {
+		h1 { font-size: 4em; }
+		h2 { font-size: 1.5em; }
+	}
+	@include breakpoint(min-width 992px, max-width 1199px) {
+		h1 { font-size: 5em; }
+		h2 { font-size: 2em; }
+	}
+	@include breakpoint(min-width 1200px) {
+		h1 { font-size: 6em; }
+		h2 { font-size: 2.5em; }
+	}
+	
+	.navbar {
+		margin-bottom: 0;
+		border-radius: 0;
+	}
+
+	.site-search {
+		width: 200px;
+	}
+}
+
+#logo {
+	background: {
+		image: url('../img/logo.png');
+		repeat: no-repeat;
+		size: contain;
+	};
+	height: 250px;
+}
+
+#main-content {
+	background-color: white;
+	margin-top: 25px;
+}
+
+article {
+	header {
+		margin: {
+			bottom: 15px;
+		}
+
+		h1 {
+			&, a {
+				color: $accent2;
+			}
+			margin: 0;
+			padding: {
+				top: 15px;
+			}
+		}
+		.timestamp {
+			background-color: $secondary;
+			color: white;
+			font-weight: bold;
+			font-size: 13px;
+			text-align: center;
+			border: {
+				top-right-radius: 10px;
+				bottom-right-radius: 10px;
+			}
+
+			.day {
+				display: block;
+				@include breakpoint(max-width 767px) {
+					font-size: 18px;
+				}
+				@include breakpoint(min-width 768px) {
+					font-size: 30px;
+				}
+			}
+		}
+	}
+
+	margin-bottom: 30px;
+}
+
+#sidebar {
+	margin: {
+		top: 30px;
+		bottom: 30px;
+	}
+	border: 4px solid $secondary;
+	border-radius: 4px;
+
+	h1 {
+		font-size: 24px;
+		color: $accent2	;
+	}
+	section {
+		padding: {
+			left: 15px;
+			right: 15px;
+		}
+	}
+}
+
+#weight-loss {
+	.progress-bar {
+		background-color: $primary;
+	}
+
+	.progress {
+		margin-bottom: 5px;
+	}
+
+	.details {
+		font-size: 85%;
+		font-style: italic;
+		color: #aaa;
+		text-align: right;
+		margin-top: 0;
+	}
+}
+
+#upcoming-races {
+	ul {
+		list-style: none outside none;
+		padding-left: 15px;
+	}
+
+	li {
+		margin-bottom: 5px;
+		> p {
+			margin: 0;
+		}
+	}
+
+	.time-loc {
+		font-size: 70%;
+	}
+}
+
+footer {
+	background-color: $accent2;
+	color: white;
+	padding-top: 10px;
+}
